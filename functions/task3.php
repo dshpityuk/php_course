@@ -7,16 +7,17 @@
 //add a greeting to the name depending on the time)
 function myName(string $name = ""){
     date_default_timezone_set('Europe/Kiev');
-    $date = date('H');
-        if ($date > 22 and $date < 6){
+    $date = date('H:i');
+        if ($date > '22:00' and $date < '6:00'){
             echo "Good night, ";
-        }elseif ($date > 7 and $date < 16){
-            echo "Good morning, ";
-        }elseif ($date > 17 and $date < 21){
+        }elseif ($date > '7:00' and $date < '16:00'){
             echo "Good day, ";
-        }else{
+        }elseif ($date > '17:00' and $date < '21:00'){
             echo "Good evening, ";
+        }else{
+            echo "Something wrong";
         }
+
     return $name;
 }
 echo myName('Dima') . "!";
