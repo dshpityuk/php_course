@@ -46,3 +46,18 @@ foreach ($year as $key => $month) {
 //    }
 //    echo "<hr>";
 //}
+
+function people($arr){
+
+    foreach ($arr as $key => $value) {
+        if (is_array($value)) {
+            people($value);
+            continue;
+        }
+        echo "$key : $value";
+        echo '<br>';
+    }
+}
+
+
+people($people);
